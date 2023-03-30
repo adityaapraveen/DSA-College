@@ -1,47 +1,66 @@
-/*wap to implement a stack using array of structures.*/
 #include <stdio.h>
-#include <stdlib.h>
 
-int ch;
 #define size 5
-int mystack[size];
-int element;
-int del;
+int stack[size];
 int top = -1;
+int num;
 
-push()
+void push()
 {
+    if (top == size - 1)
+    {
+        printf("\n!!stackoverflow\n");
+    }
+    else
+    {
+        int x;
+        printf("ENter the element to be pushed:");
+        scanf("%d", &x);
+        top += 1;
+        x = stack[top];
+    }
 }
-pop()
+int pop()
 {
-    return del;
+    if (top == -1)
+    {
+        printf("\n!!underflow!!\n");
+    }
+    else
+    {
+        int x;
+        x = stack[top];
+        printf("\nPopped element:%d\n", x);
+        top -= 1;
+        return x;
+    }
 }
-display()
+int peek()
 {
+    int x = stack[top];
+    printf("\npeeked element:%d\n", x);
 }
 
 int main()
 {
+    int num;
+
     for (;;)
     {
-        printf("\nEnter your choice:");
-        scanf("%d", &ch);
-        switch (ch)
+        printf("\npush\npop\npeek\nEnter your choice:");
+        scanf("%d", &num);
+        switch (num)
         {
         case 1:
-            printf("\nEnter the element to be pushed:");
-            scanf("%d", &element);
             push();
             break;
         case 2:
-            del = pop();
-            printf("%d", del);
+            pop();
             break;
         case 3:
-            display();
+            peek();
             break;
-        case 4:
-            exit(0);
         }
     }
+    return 0;
 }
