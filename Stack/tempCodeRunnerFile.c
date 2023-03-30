@@ -1,0 +1,1 @@
+\n1}push\n2}pop\n3}peek
