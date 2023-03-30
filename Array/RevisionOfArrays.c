@@ -5,13 +5,10 @@
 
 int main()
 {
-    // Declaring and initializing a one-dimensional array of integers
     int nums[] = {1, 2, 3, 4, 5};
 
-    // Changing the value of an array element
     nums[2] = 6;
 
-    // Printing all elements of the array using a loop
     printf("Elements of the array: ");
     for (int i = 0; i < 5; i++)
     {
@@ -19,7 +16,6 @@ int main()
     }
     printf("\n");
 
-    // Inputting values for the array using a loop
     int arr[MAX_SIZE];
     int n;
     printf("Enter the size of the array: ");
@@ -30,7 +26,6 @@ int main()
         scanf("%d", &arr[i]);
     }
 
-    // Printing all elements of the array using a loop
     printf("Elements of the array: ");
     for (int i = 0; i < n; i++)
     {
@@ -38,7 +33,6 @@ int main()
     }
     printf("\n");
 
-    // Searching for an element in the array
     int search_num;
     printf("Enter a number to search in the array: ");
     scanf("%d", &search_num);
@@ -51,13 +45,10 @@ int main()
         }
     }
 
-    // Declaring and initializing a two-dimensional array of characters
     char names[][20] = {"John", "Jane", "Jim"};
 
-    // Accessing and printing a single element of the array
     printf("The second name is: %s\n", names[1]);
 
-    // Declaring and initializing an array of strings
     char strs[3][MAX_SIZE];
     printf("Enter three strings: ");
     for (int i = 0; i < 3; i++)
