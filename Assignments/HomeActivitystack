@@ -1,0 +1,93 @@
+#include <stdio.h>
+
+#define SIZE 10          // Defining size for the stack
+
+int MyNumbers[SIZE];     // Declaring the array
+int MyDivBy5Stack[SIZE]; // Declaring stack
+
+int top = -1;            // Initializing top variable of stack
+
+void push(int num)
+{
+    if (top == SIZE - 1)
+    {
+        printf("\nSTACKOVERFLOW\n");
+    }
+    else
+    {
+        top += 1;
+        MyDivBy5Stack[top] = num;
+    }
+}
+
+int pop()
+{
+    int num = -1;
+    if(top == -1)
+    {
+        printf("\nUNDERFLOW\n");
+    }
+    else
+    {
+        MyDivBy5Stack[top] = num;
+        top -= 1;
+    }
+    return num;
+}
+
+int peek()
+{
+    int num = -1;
+    if( top == -1)
+    {
+        printf("\nStack is Empty\n");
+    }
+    else
+    {
+        MyDivBy5Stack[top] = num;
+    }
+    return num;
+}
+
+int main()
+{
+    int i;
+    printf("Enter 10 array elements: ");
+    for (i = 0; i < SIZE; i++)
+    {
+        scanf("%d", &MyNumbers[i]);
+    }
+    for (i = 0; i < SIZE; i++)
+    {
+        if (MyNumbers[i] % 5 == 0)
+        {
+            push(MyNumbers[i]);
+        }
+    }
+    int topElement = peek();
+    if (topElement != -1)
+    {
+        printf("Top element: %d\n", topElement);
+    }
+    for (i = 0; i < top + 1; i++)
+    {
+        if (MyDivBy5Stack[i] == 5 || MyDivBy5Stack[i] == 25)
+        {
+            pop();
+        }
+    }
+
+    printf("MyNumbers: ");
+    for (i = 0; i < SIZE; i++)
+    {
+        printf("%d ", MyNumbers[i]);
+    }
+    printf("\nMyDivBy5Stack: ");
+    for (i = 0; i < top + 1; i++)
+    {
+        printf("%d ", MyDivBy5Stack[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
