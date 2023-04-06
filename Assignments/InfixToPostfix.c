@@ -14,6 +14,7 @@ int isEmpty()
 int isFull()
 {
     return top == MAX - 1;
+    
 }
 
 char peek()
