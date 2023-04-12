@@ -27,8 +27,9 @@ void Dequeue()
     }
     else
     {
-        printf("Element deleted from queue is : %d\n", queue_array[front]);
+        int x = queue_array[front];
         front = front + 1;
+        printf("Element deleted from queue is : %d\n", queue_array[front]);
     }
 }
 void display()
