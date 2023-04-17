@@ -14,12 +14,17 @@ struct list
 };
 typedef struct list list;
 
-list * create_list()
+list *create_list()
 {
-    list *lst = (list*)malloc(sizeof(list));
+    list *lst = (list *)malloc(sizeof(list));
     lst->head = NULL;
     lst->num_elements;
     return lst;
+}
+
+void add(list *lst)
+{
+     = malloc(sizeof());
 }
 
 int main()
