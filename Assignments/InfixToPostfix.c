@@ -1,6 +1,12 @@
-#include <limits.h>
+// USN - 1RVU22CSE009
+/*i) Write a C program to convert the following expression into postfix form.
+     A+B/C*(D+E)-F
+  ii) Explain the infix_to_postfix( ) function. Explain how the rules for converting an infix
+    expression to a postfix expression are coded in the program. */
+
 #include <stdio.h>
 #include <stdlib.h>
+
 #define MAX 20
 
 char stk[20];
@@ -14,7 +20,6 @@ int isEmpty()
 int isFull()
 {
     return top == MAX - 1;
-    
 }
 
 char peek()
@@ -106,7 +111,7 @@ int covertInfixToPostfix(char *expression)
 
 int main()
 {
-    char expression[] = "((a+(b*c))-d)";
+    char expression[] = "A+B/C*(D+E)-F";
     covertInfixToPostfix(expression);
     return 0;
 }
